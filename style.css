@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap');
+
 * {
-    font-family: sans-serif;
+    
     padding: 0%;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    font-family: 'Sarala', sans-serif;
+    
 }
 
 body {
-    background-color: #18181b;
+    background-color: #001c3b;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -16,10 +20,96 @@ body {
     flex-direction: column;
 }
 
-.logo{
-    max-width: 600px;
-    margin-bottom: 20px;
+/* HEADER */
+
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px; 
+    top: 40px;
+    right: 100px;
+    z-index: 2;
 }
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider-switch:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider-switch {
+    background-color: #2196F3;
+}
+  
+input:focus + .slider-switch {
+    box-shadow: 0 0 1px #2196F3;
+}
+  
+input:checked + .slider-switch:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider-switch.round {
+    border-radius: 34px;
+}
+  
+.slider-switch.round:before {
+    border-radius: 50%;
+}
+
+.switch-P-E{
+    position: absolute;
+    display: flex;
+    width: 207px;
+    height: 34px; 
+    top: 40px;
+    right: 37px;
+    gap: 80px;
+    align-items: center;
+    z-index: 1;
+}
+
+.switch-P-E span{
+    color: #fff;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 100px;
+    font-size: 70px;
+    color: #0070cc;
+    text-shadow: 8px 7px 3px rgba(0,0,0,0.17);
+    
+}
+
+/* MAIN */
 
 .container-input {
     max-width: 480px;
@@ -32,7 +122,6 @@ body {
 }
 
 .slider {
-    -webkit-appearance: none;
     width: 100%;
     border-radius: 5px;
     background: white;
@@ -42,16 +131,24 @@ body {
 }
 
 .button-cta {
-    height: 40px;
-    background-color: #3eb72b;
+    height: 43px;
+    background-color: rgba(5, 141, 243, 1);
     border: 0;
-    border-radius: 4px;
+    border-radius: 15px;
     cursor: pointer;
     margin-top: 40px;
     color: #fff;
     font-weight: bold;
     font-size: 18px;
+    transition: transform 0.4s;
 }
+
+.button-cta:hover {
+    background-color: rgba(5, 141, 243, 0.8);
+    transform: scale(0.99);
+}
+
+/* CONTAINER-PASSWORD */
 
 .container-password {
     max-width: 480px;
@@ -59,7 +156,6 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    cursor: pointer;
 }
 
 .title {
@@ -72,13 +168,14 @@ body {
 
 .password {
     height: 60px;
-    background-color: rgba(0, 0, 0, 0.40);
-    border-radius: 4px;
+    background-color: rgba(5, 141, 243, 0.2);
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
-    border: 1px solid #313131;
+    font-family: sans-serif;
+    cursor: pointer;
     transition: transform 0.7s;
 }
 
@@ -91,10 +188,10 @@ body {
     position: relative;
     top: 20px;
     padding: 6px 8px;
-    background: rgb(15, 15, 15);
+    background: rgba(5, 141, 243, 0.2);
     text-align: center;
     font-size: 16px;
-    border-radius: 6px;
+    border-radius: 10px;
     visibility: hidden;
     opacity: 0;
     transition: all 0.5s ease-in-out;
