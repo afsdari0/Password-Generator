@@ -101,7 +101,7 @@ input:checked + .slider-switch:before {
 
 header h1 {
     text-align: center;
-    margin-top: 18%;
+    margin-top: 10%;
     margin-bottom: 100px;
     font-size: 70px;
     color: #0070cc;
@@ -204,4 +204,67 @@ header h1 {
     visibility: visible;
     bottom: 50px;
     opacity: 1;
+}
+
+@media (max-width: 1024px) {
+
+    .switch {
+        position: absolute;
+        display: inline-block;
+        width: 40px;
+        height: 24px; 
+        top: 20px;
+        right: 100px;
+        z-index: 2;
+    }
+
+    .slider-switch:before {
+        height: 16px;
+        width: 17px;
+    }
+
+    input:checked + .slider-switch:before {
+        -webkit-transform: translateX(16px);
+        -ms-transform: translateX(16px);
+        transform: translateX(16px);
+    }
+
+    .switch-P-E{
+        position: absolute;
+        display: flex;
+        width: 200px;
+        height: 24px; 
+        top: 20px;
+        right: 20px;
+        gap: 50px;
+        align-items: center;
+        z-index: 1;
+        
+    }
+
+    header h1 {
+        text-align: center;
+        margin-top: 17%;
+        margin-bottom: 10px;
+        font-size: 50px;
+        
+    }
+
+    .container-input {
+        width: 300px;
+        margin: 14px 0;
+    }
+
+    .container-password {
+        width: 300px;
+    }
+
+    .title {
+        text-align: center;
+        color: #fff;
+        font-size: 24px;
+        margin-top: 24px;
+        margin-bottom: 8px;
+    }
+
 }
